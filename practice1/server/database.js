@@ -16,20 +16,20 @@ function storeCredential(username,password,callback){
     const query='INSERT INTO ACCOUNTS VALUES(?,?)';
     connection.query(query,[username,password],(error,result)=>{
             if(error){
-                callback(error,null);
+                callback(null);
                 return ;
             }
-            callback(null,result);
+            callback(result);
     });
 }
 function searchCredential(username,password,callback){
     const query='SELECT *FROM ACCOUNTS WHERE USER_NAME=?,PASSWORD=?';
     connection.query(query,[username,password],(error,result)=>{
         if(error){
-            callback(error,null);
+            callback(null);
             return ;
         }
-        callback(null,result);
+        callback(result);
     });
 }
 module.exports={
