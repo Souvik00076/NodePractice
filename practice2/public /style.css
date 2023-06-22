@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .form-container {
+    text-align: center;
+  }
+
+  .form-section {
+    margin-bottom: 20px;
+  }
