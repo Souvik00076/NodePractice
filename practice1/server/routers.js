@@ -16,6 +16,7 @@ router.post('/login',(req,res)=>{
     const username=req.body.username;
     const password=req.body.password;
     database.searchCredential(username,password,(result)=>{
+       
                 //if error send status 512 to handle database error
             if(result==null) res.sendStatus(512);
             else if(result.length>0) res.sendStatus(200);
@@ -26,6 +27,7 @@ router.post('/signUp',(req,res)=>{
     const username=req.body.username;
     const password=req.body.password;
     database.storeCredential(username,password,(result)=>{
+      
         if(result==null) res.sendStatus(512);
         else if(result.affectedRows>0) res.sendStatus(200);
         else result.sendStatus(212);//to show user hasnot signed up

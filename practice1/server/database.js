@@ -13,9 +13,10 @@ connection.connect(error=>{
 });
 
 function storeCredential(username,password,callback){
-    const query='INSERT INTO ACCOUNTS VALUES(?,?)';
-    connection.query(query,[username,password],(error,result)=>{
-            if(error){
+    const query='INSERT INTO ACCOUNTS(USER_NAME,PASSWORD) VALUES(?,?)';
+    connection.query(query,[username,password],(err,result)=>{
+          
+            if(err){
                 callback(null);
                 return ;
             }

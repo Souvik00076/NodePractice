@@ -31,7 +31,7 @@ function fetchData(route,username,password){
         if(response.status==512) alert("Internal Server error");
         else if(response.status==200) return true;
         return false;  
-    }).catch(error=>{
+    }).catch(error=>{if(response.status==200) return true;
             alert("Error Client Side");
     });
     return false;
@@ -45,7 +45,7 @@ singUpButton.addEventListener('submit',event=>{
     
     if(validateEmail(username) &&
     validatePassword(password,confirmPassword)){
-        const flag=fetchData('login',username,password);
+        const flag=fetchData('signUp',username,password);
         if(flag==true) alert("SignUp Succesfull");
         else alert("User already exist");  
     }
